@@ -1,13 +1,16 @@
 'use strict';
 
 angular.
-  module('postList').
-  component('postList', {
+module('postList').
+component('postList', {
     templateUrl: 'post-list/post-list.template.html',
-    controller: ['Post',
-      function PostListController(Post) {
-        this.posts = Post.query();
+    controller: ['PostService',
+    function PostListController(PostService) {
+        var self = this;
+        PostService.query().success(function(data) {
+            self.posts = data;
+        });
         this.orderProp = 'date';
-      }
-    ]
-  });
+    }
+]
+});

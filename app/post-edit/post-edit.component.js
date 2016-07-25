@@ -4,8 +4,8 @@ angular.
   module('postEdit').
   component('postEdit', {
     templateUrl: 'post-edit/post-edit.template.html',
-    controller: ['$route', '$location', '$routeParams', 'Post',
-      function PostEditController($route, $location, $routeParams, Post) {
+    controller: ['$route', '$location', '$routeParams', 'PostService',
+      function PostEditController($route, $location, $routeParams, PostService) {
           let postId = $routeParams.postId;
           if(typeof postId === 'undefined') {
               this.title = 'Create a post';

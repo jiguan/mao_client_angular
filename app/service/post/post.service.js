@@ -2,17 +2,15 @@
 
 angular.
   module('service.post').
-  factory('Post', ['$resource',
-    function($resource) {
-      return $resource('posts', {}, {
-        query: {
-          url: "posts/posts.json",
-          method: 'GET',
-          isArray: true
-      }, getPost: {
-          method: 'GET',
-          url: "posts/abc.json"
-      }
-      });
+  factory('PostService', ['$http',
+    function($http) {
+      return {
+        query: function(callback){
+            return $http.get('http://localhost:8080/api/post');
+        },
+        getPost: function(postId) {
+            return $http.get('http://localhost:8080/api/post/'+postId);
+        }
+      };
     }
   ]);
