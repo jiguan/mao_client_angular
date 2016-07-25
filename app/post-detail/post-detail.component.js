@@ -8,7 +8,7 @@ component('postDetail', {
     // controller: ['$http', '$routeParams',
     //  function PhoneDetailController($http, $routeParams) {
     function PostDetailController($routeParams, Post) {
-        this.post = {"title" : "Title", "detail" : "detail"};
+        this.post = {"id" : $routeParams.postId, "title" : "Title", "detail" : "detail"};
     }
 ]
 });

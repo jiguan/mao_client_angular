@@ -4,15 +4,20 @@ angular.
   module('postEdit').
   component('postEdit', {
     templateUrl: 'post-edit/post-edit.template.html',
-    controller: ['$routeParams', 'Post',
-      function PostEditController($routeParams, Post) {
+    controller: ['$route', '$location', '$routeParams', 'Post',
+      function PostEditController($route, $location, $routeParams, Post) {
           let postId = $routeParams.postId;
           if(typeof postId === 'undefined') {
               this.title = 'Create a post';
               this.button = 'Create';
           } else {
                this.title = 'Edit a post';
-               this.button = 'Update'
+               this.post = Post.getPost(postId);
+               this.button = 'Update';
+          }
+          this.update = function() {
+            //   Post.save(this.p   ost);
+              $location.path('/posts');
           }
 
       }

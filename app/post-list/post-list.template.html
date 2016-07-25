@@ -16,11 +16,10 @@
           <option value="age">Newest</option>
         </select>
       </p>
-
+      <a class=".btn" href="#!/posts/post/create">Create</a>
     </div>
     <div class="col-md-10">
       <!--Body content-->
-
       <ul class="posts">
         <li ng-repeat="post in $ctrl.posts | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
           <a href="#!/posts/post/{{post.id}}" class="thumb">

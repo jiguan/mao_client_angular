@@ -4,13 +4,15 @@ angular.
   module('service.post').
   factory('Post', ['$resource',
     function($resource) {
-      return $resource('posts/:postId.json', {}, {
+      return $resource('posts', {}, {
         query: {
+          url: "posts/posts.json",
           method: 'GET',
-          //present a default value
-          params: {postId: 'posts'},
           isArray: true
-        }
+      }, getPost: {
+          method: 'GET',
+          url: "posts/abc.json"
+      }
       });
     }
   ]);
