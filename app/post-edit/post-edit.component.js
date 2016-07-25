@@ -6,14 +6,15 @@ angular.
     templateUrl: 'post-edit/post-edit.template.html',
     controller: ['$routeParams', 'Post',
       function PostEditController($routeParams, Post) {
-        var self = this;
-        self.post = Post.get({postId: $routeParams.postId}, function(post) {
-          self.setImage(post.images[0]);
-        });
+          let postId = $routeParams.postId;
+          if(typeof postId === 'undefined') {
+              this.title = 'Create a post';
+              this.button = 'Create';
+          } else {
+               this.title = 'Edit a post';
+               this.button = 'Update'
+          }
 
-        self.setImage = function setImage(imageUrl) {
-          self.mainImageUrl = imageUrl;
-        };
       }
     ]
   });

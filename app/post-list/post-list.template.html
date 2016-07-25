@@ -23,11 +23,11 @@
 
       <ul class="posts">
         <li ng-repeat="post in $ctrl.posts | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
-          <a href="#!/posts/{{post.name}}" class="thumb">
-            <img ng-src="{{post.name}}" alt="{{post.name}}" />
+          <a href="#!/posts/post/{{post.id}}" class="thumb">
+            <img ng-src="{{post.title}}" alt="{{post.title}}" />
           </a>
-          <a href="#!/posts/{{post.id}}">{{post.name}}</a>
-          <p>{{post.snippet}}</p>
+          <a href="#!/posts/post/{{post.id}}">{{post.title}}</a>
+          <p>{{post.title}}</p>
         </li>
       </ul>
 

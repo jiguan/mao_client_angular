@@ -10,8 +10,14 @@ angular.
         when('/posts', {
           template: '<post-list></post-list>'
         }).
-        when('/posts/:postId', {
+        when('/posts/post/create', {
+          template: '<post-edit></post-edit>'
+        }).
+        when('/posts/post/:postId', {
           template: '<post-detail></post-detail>'
+        }).
+        when('/posts/post/:postId/edit', {
+          template: '<post-edit></post-edit>'
         }).
         otherwise('/posts');
     }
