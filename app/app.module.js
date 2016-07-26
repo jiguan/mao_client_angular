@@ -5,5 +5,6 @@ angular.module('mao-client', [
   'service',
   'postList',
   'postDetail',
-  'postEdit'
+  'postEdit',
+  'angularFileUpload'
 ]);
