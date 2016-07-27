@@ -28,6 +28,11 @@
             </div>
         </div>
     </form>
+    <div ng-repeat="image in $ctrl.posts.images">
+        <img ng-src="{{$ctrl.baseUrl + image}}" alt="{{image}}" />
+    </div>
+
+
 
 
 Upload image <input type="checkbox" ng-model="checked" aria-label="Toggle ngHide"><br/>

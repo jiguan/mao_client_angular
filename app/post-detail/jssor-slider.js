@@ -4,6 +4,9 @@ angular.module('postDetail')
         restrict: 'E',
         replace: true,
         templateUrl: 'post-detail/jssor-slider.template.html',
+        scope: {
+          post: '='
+        },
         link: function (scope, elem) {
             var jssor_1_SlideoTransitions = [
                 [{ b: 5500, d: 3000, o: -1, r: 240, e: { r: 2 } }],
@@ -34,6 +37,8 @@ angular.module('postDetail')
                   $Class: $JssorBulletNavigator$
                 }
             };
+            scope.baseUrl =  "http://localhost:8080/api/file/";
+
 
             elem.ready(function () {
                 var jssor_slider1 = new $JssorSlider$('jssor_1', options);

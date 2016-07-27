@@ -9,6 +9,7 @@ component('postEdit', {
         let postId = $routeParams.postId;
         var self = this;
         this.post = {};
+        this.baseUrl = 'http://localhost:8080/api/file/';
         if(typeof postId === 'undefined') {
             this.title = 'Create a post';
             this.button = 'Create';

@@ -7,6 +7,7 @@ component('postList', {
     controller: ['PostService',
     function PostListController(PostService) {
         var self = this;
+        this.baseUrl = "http://localhost:8080/api/file/"
         PostService.query().success(function(data) {
             self.posts = data;
         });
