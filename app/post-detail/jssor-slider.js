@@ -1,11 +1,12 @@
 angular.module('postDetail')
-.directive('jssorSlider', [function () {
+.directive('jssorSlider', ['$timeout', function ($timeout) {
     return {
         restrict: 'E',
         replace: true,
         templateUrl: 'post-detail/jssor-slider.template.html',
         scope: {
-          post: '='
+          post: '=',
+          update: '='
         },
         link: function (scope, elem) {
             var jssor_1_SlideoTransitions = [
@@ -38,11 +39,11 @@ angular.module('postDetail')
                 }
             };
             scope.baseUrl =  "http://localhost:8080/api/file/";
-
-            elem.ready(function () {
-                var jssor_slider1 = new $JssorSlider$('jssor_1', options);
-            });
-
+            scope.update.update = function() {
+                elem.ready(function() {
+                    var jssor_slider1 = new $JssorSlider$('jssor_1', options);
+                });
+            }
         }
     };
 }]);
