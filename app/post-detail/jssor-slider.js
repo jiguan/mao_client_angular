@@ -39,7 +39,6 @@ angular.module('postDetail')
             };
             scope.baseUrl =  "http://localhost:8080/api/file/";
 
-
             elem.ready(function () {
                 var jssor_slider1 = new $JssorSlider$('jssor_1', options);
             });
